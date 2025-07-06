@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card - John Doe</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .profile-card {
+            width: 100%;
+            max-width: 480px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .profile-header {
+            background: linear-gradient(to right, #3498db, #2c3e50);
+            padding: 40px 30px 80px;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+        
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 5px solid white;
+            object-fit: cover;
+            position: absolute;
+            bottom: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ecf0f1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            color: #3498db;
+        }
+        
+        .profile-name {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+        }
+        
+        .profile-tagline {
+            font-size: 18px;
+            font-weight: 400;
+            opacity: 0.9;
+            line-height: 1.5;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .profile-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 80px 20px 40px;
+            text-align: center;
+        }
+        
+        .stat {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .stat-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+        
+        .stat-label {
+            font-size: 16px;
+            color: #7f8c8d;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-top: 1px solid #eee;
+        }
+        
+        .social-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: #e1e8ed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #3498db;
+            font-size: 20px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .social-icon:hover {
+            background: #3498db;
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .follow-btn {
+            display: block;
+            width: 200px;
+            margin: 30px auto;
+            padding: 14px;
+            background: linear-gradient(to right, #3498db, #2c3e50);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+        }
+        
+        .follow-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.6);
+        }
+        
+        .follow-btn:active {
+            transform: translateY(1px);
+        }
+        
+        @media (max-width: 480px) {
+            .profile-header {
+                padding: 30px 20px 70px;
+            }
+            
+            .profile-name {
+                font-size: 28px;
+            }
+            
+            .profile-tagline {
+                font-size: 16px;
+            }
+            
+            .profile-stats {
+                gap: 30px;
+                padding: 70px 15px 30px;
+            }
+            
+            .stat-value {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-card">
+        <div class="profile-header">
+            <h1 class="profile-name">John Doe</h1>
+            <p class="profile-tagline">Building Websites and Webapps with Seamless User Experience Across Devices.</p>
+            <div class="profile-pic">
+                <i class="fas fa-user"></i>
+            </div>
+        </div>
+        
+        <div class="profile-stats">
+            <div class="stat">
+                <span class="stat-value">658</span>
+                <span class="stat-label">Following</span>
+            </div>
+            <div class="stat">
+                <span class="stat-value">36</span>
+                <span class="stat-label">Followers</span>
+            </div>
+        </div>
+        
+        <button class="follow-btn">Follow</button>
+        
+        <div class="social-links">
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-dribbble"></i></a>
+        </div>
+    </div>
+    
+    <script>
+        // Add simple animation to the stats
+        document.querySelectorAll('.stat-value').forEach((value, index) => {
+            const target = parseInt(value.textContent);
+            let count = 0;
+            const duration = 1500;
+            const increment = target / (duration / 16);
+            
+            const timer = setInterval(() => {
+                count += increment;
+                if (count >= target) {
+                    count = target;
+                    clearInterval(timer);
+                }
+                value.textContent = Math.floor(count);
+            }, 16);
+        });
+        
+        // Follow button interaction
+        const followBtn = document.querySelector('.follow-btn');
+        let following = false;
+        
+        followBtn.addEventListener('click', () => {
+            following = !following;
+            followBtn.textContent = following ? 'Following' : 'Follow';
+            followBtn.style.background = following 
+                ? 'linear-gradient(to right, #2ecc71, #27ae60)' 
+                : 'linear-gradient(to right, #3498db, #2c3e50)';
+        });
+    </script>
+</body>
+</html>
